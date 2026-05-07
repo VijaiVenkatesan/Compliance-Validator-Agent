@@ -1,0 +1,1955 @@
+[
+  {
+    "invoice_id": "INV-2024-0001",
+    "overall_decision": "APPROVED",
+    "compliance_score": 100.0,
+    "confidence": 1.0,
+    "requires_human_review": false,
+    "validation_results": {
+      "category_a_authenticity": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "A1": true,
+          "A1_finding": "✓ Valid invoice number format",
+          "A1_confidence": 0.98,
+          "A2": true,
+          "A2_finding": "✓ No duplicates detected",
+          "A2_confidence": 0.98
+        }
+      },
+      "category_b_gst": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "B1": true,
+          "B1_finding": "✓ Valid 15-char GSTIN",
+          "B1_confidence": 0.98,
+          "B7": true,
+          "B7_finding": "✓ Tax math correct (CGST+SGST=IGST)",
+          "B7_confidence": 0.98
+        }
+      },
+      "category_c_arithmetic": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "C1": true,
+          "C1_finding": "✓ Line items: qty×rate=amount",
+          "C1_confidence": 0.98,
+          "C2": true,
+          "C2_finding": "✓ Subtotal matches line sum",
+          "C2_confidence": 0.98
+        }
+      },
+      "category_d_tds": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "D1": true,
+          "D1_finding": "✓ TDS applicable per vendor/description",
+          "D1_confidence": 0.98,
+          "D2": true,
+          "D2_finding": "✓ Section 194J @ 2.0%",
+          "D2_confidence": 0.98
+        }
+      },
+      "category_e_policy": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "E1": true,
+          "E1_finding": "✓ Within PO tolerance (±5%/₹1000)",
+          "E1_confidence": 0.98,
+          "E3": true,
+          "E3_finding": "✓ Approved vendor & active GSTIN",
+          "E3_confidence": 0.98
+        }
+      }
+    },
+    "tds_summary": {
+      "section": "194J",
+      "rate": 2.0,
+      "tds_on_gst": false
+    },
+    "gst_summary": {
+      "intra_inter": "intra"
+    },
+    "audit_trail": [
+      {
+        "step": "validation",
+        "agent": "Validator",
+        "reasoning": "✓ Invoice format valid, no duplicates; ✓ GSTIN valid, tax math correct; ✓ Line math and subtotal verified; ✓ TDS applicable: 194J @ 2.0%; ✓ PO tolerance met, vendor approved",
+        "timestamp": "2026-05-07T07:49:16.613685Z",
+        "confidence": 0.99
+      },
+      {
+        "step": "resolution",
+        "agent": "Resolver",
+        "reasoning": "All active checks passed.",
+        "timestamp": "2026-05-07T07:49:16.613685Z",
+        "confidence": 1.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2024-0002",
+    "overall_decision": "APPROVED",
+    "compliance_score": 92.0,
+    "confidence": 0.85,
+    "requires_human_review": false,
+    "validation_results": {
+      "category_a_authenticity": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "A1": true,
+          "A1_finding": "✓ Valid invoice number format",
+          "A1_confidence": 0.98,
+          "A2": true,
+          "A2_finding": "✓ No duplicates detected",
+          "A2_confidence": 0.98
+        }
+      },
+      "category_b_gst": {
+        "score": 0,
+        "max_score": 2,
+        "checks": {
+          "B1": true,
+          "B1_finding": "✓ Valid 15-char GSTIN",
+          "B1_confidence": 0.98,
+          "B7": false,
+          "B7_finding": "⚠ Rate mismatch or edge case",
+          "B7_confidence": 0.98
+        }
+      },
+      "category_c_arithmetic": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "C1": true,
+          "C1_finding": "✓ Line items: qty×rate=amount",
+          "C1_confidence": 0.98,
+          "C2": true,
+          "C2_finding": "✓ Subtotal matches line sum",
+          "C2_confidence": 0.98
+        }
+      },
+      "category_d_tds": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "D1": true,
+          "D1_finding": "✓ TDS applicable per vendor/description",
+          "D1_confidence": 0.98,
+          "D2": true,
+          "D2_finding": "✓ Section 194C @ 2.0%",
+          "D2_confidence": 0.98
+        }
+      },
+      "category_e_policy": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "E1": true,
+          "E1_finding": "✓ Within PO tolerance (±5%/₹1000)",
+          "E1_confidence": 0.98,
+          "E3": true,
+          "E3_finding": "✓ Approved vendor & active GSTIN",
+          "E3_confidence": 0.98
+        }
+      }
+    },
+    "tds_summary": {
+      "section": "194C",
+      "rate": 2.0,
+      "tds_on_gst": false
+    },
+    "gst_summary": {
+      "intra_inter": "inter"
+    },
+    "audit_trail": [
+      {
+        "step": "validation",
+        "agent": "Validator",
+        "reasoning": "✓ Invoice format valid, no duplicates; ⚠ Tax rate mismatch (may be valid edge case); ✓ Line math and subtotal verified; ✓ TDS applicable: 194C @ 2.0%; ✓ PO tolerance met, vendor approved",
+        "timestamp": "2026-05-07T07:49:31.406297Z",
+        "confidence": 0.99
+      },
+      {
+        "step": "resolution",
+        "agent": "Resolver",
+        "reasoning": "Compliant with flags/approvals.  [GST Notification 11/2017: GTA forward charge rules]",
+        "timestamp": "2026-05-07T07:49:31.406297Z",
+        "confidence": 0.85
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2024-0003",
+    "overall_decision": "ESCALATE_TO_HUMAN",
+    "compliance_score": 85.5,
+    "confidence": 0.82,
+    "requires_human_review": true,
+    "validation_results": {
+      "category_a_authenticity": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "A1": true,
+          "A1_finding": "✓ Valid invoice number format",
+          "A1_confidence": 0.99,
+          "A2": true,
+          "A2_finding": "✓ No duplicates detected",
+          "A2_confidence": 0.99
+        }
+      },
+      "category_b_gst": {
+        "score": 0,
+        "max_score": 2,
+        "checks": {
+          "B1": true,
+          "B1_finding": "✓ Valid 15-char GSTIN",
+          "B1_confidence": 0.99,
+          "B7": false,
+          "B7_finding": "⚠ Rate mismatch or edge case (5% vs 12%)",
+          "B7_confidence": 0.85
+        }
+      },
+      "category_c_arithmetic": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "C1": true,
+          "C1_finding": "✓ Line items: qty×rate=amount",
+          "C1_confidence": 0.99,
+          "C2": true,
+          "C2_finding": "✓ Subtotal matches line sum",
+          "C2_confidence": 0.99
+        }
+      },
+      "category_d_tds": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "D1": true,
+          "D1_finding": "✓ TDS applicable per vendor/description",
+          "D1_confidence": 0.99,
+          "D2": true,
+          "D2_finding": "✓ Section 194C @ 2.0%",
+          "D2_confidence": 0.99
+        }
+      },
+      "category_e_policy": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "E1": true,
+          "E1_finding": "✓ Within PO tolerance (±5%/₹1000)",
+          "E1_confidence": 0.99,
+          "E3": true,
+          "E3_finding": "✓ Approved vendor & active GSTIN",
+          "E3_confidence": 0.99
+        }
+      }
+    },
+    "tds_summary": {
+      "section": "194C",
+      "rate": 2.0,
+      "tds_on_gst": false
+    },
+    "gst_summary": {
+      "intra_inter": "intra"
+    },
+    "audit_trail": [
+      {
+        "step": "validation",
+        "agent": "Validator",
+        "reasoning": "✓ Invoice format valid, no duplicates; ⚠ Tax rate mismatch (may be valid edge case, requires manual review); ✓ Line math and subtotal verified; ✓ TDS applicable: 194C @ 2.0%; ✓ PO tolerance met, vendor approved",
+        "timestamp": "2024-07-20T10:30:15.123456Z",
+        "confidence": 0.95
+      },
+      {
+        "step": "resolution",
+        "agent": "Resolver",
+        "reasoning": "GST rate discrepancy detected. Requires human intervention to verify product HSN code and applicable GST rate.",
+        "timestamp": "2024-07-20T10:30:15.123456Z",
+        "confidence": 0.82
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2024-0004",
+    "overall_decision": "REJECTED",
+    "compliance_score": 35.0,
+    "confidence": 0.95,
+    "requires_human_review": false,
+    "validation_results": {
+      "category_a_authenticity": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "A1": true,
+          "A1_finding": "✓ Valid invoice number format",
+          "A1_confidence": 0.98,
+          "A2": true,
+          "A2_finding": "✓ No duplicates detected",
+          "A2_confidence": 0.98
+        }
+      },
+      "category_b_gst": {
+        "score": 0,
+        "max_score": 2,
+        "checks": {
+          "B1": true,
+          "B1_finding": "✓ Valid 15-char GSTIN",
+          "B1_confidence": 0.98,
+          "B7": false,
+          "B7_finding": "✗ Composition dealer charged GST, which is not allowed.",
+          "B7_confidence": 0.98
+        }
+      },
+      "category_c_arithmetic": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "C1": true,
+          "C1_finding": "✓ Line items: qty×rate=amount",
+          "C1_confidence": 0.98,
+          "C2": true,
+          "C2_finding": "✓ Subtotal matches line sum",
+          "C2_confidence": 0.98
+        }
+      },
+      "category_d_tds": {
+        "score": 0,
+        "max_score": 2,
+        "checks": {
+          "D1": false,
+          "D1_finding": "✗ TDS applicable per vendor/description but not deducted",
+          "D1_confidence": 0.98,
+          "D2": true,
+          "D2_finding": "✓ Section 194C @ 2.0% identified",
+          "D2_confidence": 0.98
+        }
+      },
+      "category_e_policy": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "E1": true,
+          "E1_finding": "✓ Within PO tolerance (±5%/₹1000)",
+          "E1_confidence": 0.98,
+          "E3": true,
+          "E3_finding": "✓ Approved vendor & active GSTIN",
+          "E3_confidence": 0.98
+        }
+      }
+    },
+    "tds_summary": {
+      "section": "194C",
+      "rate": 2.0,
+      "tds_on_gst": false
+    },
+    "gst_summary": {
+      "intra_inter": "intra"
+    },
+    "audit_trail": [
+      {
+        "step": "validation",
+        "agent": "Validator",
+        "reasoning": "✓ Invoice format valid, no duplicates; ✗ Composition dealer charged GST; ✓ Line math and subtotal verified; ✗ TDS applicable but not deducted; ✓ PO tolerance met, vendor approved",
+        "timestamp": "2024-05-07T10:30:00.123456Z",
+        "confidence": 0.99
+      },
+      {
+        "step": "resolution",
+        "agent": "Resolver",
+        "reasoning": "Invoice REJECTED: Vendor is a Composition Scheme dealer and has incorrectly charged GST. Additionally, applicable TDS was not deducted.",
+        "timestamp": "2024-05-07T10:30:00.567890Z",
+        "confidence": 0.95
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2024-0005",
+    "overall_decision": "REJECTED",
+    "compliance_score": 20.0,
+    "confidence": 0.98,
+    "requires_human_review": false,
+    "validation_results": {
+      "category_a_authenticity": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "A1": true,
+          "A1_finding": "✓ Valid invoice number format",
+          "A1_confidence": 0.98,
+          "A2": true,
+          "A2_finding": "✓ No duplicates detected",
+          "A2_confidence": 0.98
+        }
+      },
+      "category_b_gst": {
+        "score": 0,
+        "max_score": 2,
+        "checks": {
+          "B1": true,
+          "B1_finding": "✓ Valid 15-char GSTIN",
+          "B1_confidence": 0.98,
+          "B7": false,
+          "B7_finding": "⚠ Rate mismatch or edge case",
+          "B7_confidence": 0.98
+        }
+      },
+      "category_c_arithmetic": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "C1": true,
+          "C1_finding": "✓ Line items: qty×rate=amount",
+          "C1_confidence": 0.98,
+          "C2": true,
+          "C2_finding": "✓ Subtotal matches line sum",
+          "C2_confidence": 0.98
+        }
+      },
+      "category_d_tds": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "D1": true,
+          "D1_finding": "✓ TDS applicable per vendor/description",
+          "D1_confidence": 0.98,
+          "D2": true,
+          "D2_finding": "✓ Section 194J @ 2.0%",
+          "D2_confidence": 0.98
+        }
+      },
+      "category_e_policy": {
+        "score": 0,
+        "max_score": 2,
+        "checks": {
+          "E1": true,
+          "E1_finding": "✓ Within PO tolerance (±5%/₹1000)",
+          "E1_confidence": 0.98,
+          "E3": false,
+          "E3_finding": "⚠ Vendor requires verification",
+          "E3_confidence": 0.98
+        }
+      }
+    },
+    "tds_summary": {
+      "section": "194J",
+      "rate": 2.0,
+      "tds_on_gst": false
+    },
+    "gst_summary": {
+      "intra_inter": "inter"
+    },
+    "audit_trail": [
+      {
+        "step": "validation",
+        "agent": "Validator",
+        "reasoning": "✓ Invoice format valid, no duplicates; ⚠ Tax rate mismatch (may be valid edge case); ✓ Line math and subtotal verified; ✓ TDS applicable: 194J @ 2.0%; ⚠ Vendor not in approved list (may require review)",
+        "timestamp": "2026-05-07T07:50:29.823895Z",
+        "confidence": 0.99
+      },
+      {
+        "step": "resolution",
+        "agent": "Resolver",
+        "reasoning": "Vendor GSTIN suspended. [GST Act Sec 29: Suspended GSTIN invalid for transactions]",
+        "timestamp": "2026-05-07T07:50:29.823895Z",
+        "confidence": 0.98
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2024-0006",
+    "overall_decision": "REJECTED",
+    "compliance_score": 40.0,
+    "confidence": 0.95,
+    "requires_human_review": false,
+    "validation_results": {
+      "category_a_authenticity": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "A1": true,
+          "A1_finding": "✓ Valid invoice number format",
+          "A1_confidence": 0.98,
+          "A2": true,
+          "A2_finding": "✓ No duplicates detected",
+          "A2_confidence": 0.98
+        }
+      },
+      "category_b_gst": {
+        "score": 0,
+        "max_score": 2,
+        "checks": {
+          "B1": true,
+          "B1_finding": "✓ Valid 15-char GSTIN",
+          "B1_confidence": 0.98,
+          "B7": false,
+          "B7_finding": "⚠ Rate mismatch or edge case",
+          "B7_confidence": 0.98
+        }
+      },
+      "category_c_arithmetic": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "C1": true,
+          "C1_finding": "✓ Line items: qty×rate=amount",
+          "C1_confidence": 0.98,
+          "C2": true,
+          "C2_finding": "✓ Subtotal matches line sum",
+          "C2_confidence": 0.98
+        }
+      },
+      "category_d_tds": {
+        "score": 0,
+        "max_score": 2,
+        "checks": {
+          "D1": false,
+          "D1_finding": "✓ TDS applicable per vendor/description",
+          "D1_confidence": 0.98,
+          "D2": true,
+          "D2_finding": "✓ Section 194C @ 2.0%",
+          "D2_confidence": 0.98
+        }
+      },
+      "category_e_policy": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "E1": true,
+          "E1_finding": "✓ Within PO tolerance (±5%/₹1000)",
+          "E1_confidence": 0.98,
+          "E3": true,
+          "E3_finding": "✓ Approved vendor & active GSTIN",
+          "E3_confidence": 0.98
+        }
+      }
+    },
+    "tds_summary": {
+      "section": "194C",
+      "rate": 2.0,
+      "tds_on_gst": false
+    },
+    "gst_summary": {
+      "intra_inter": "inter"
+    },
+    "audit_trail": [
+      {
+        "step": "validation",
+        "agent": "Validator",
+        "reasoning": "✓ Invoice format valid, no duplicates; ⚠ Tax rate mismatch (may be valid edge case); ✓ Line math and subtotal verified; ✓ PO tolerance met, vendor approved",
+        "timestamp": "2026-05-07T07:50:44.166181Z",
+        "confidence": 0.99
+      },
+      {
+        "step": "resolution",
+        "agent": "Resolver",
+        "reasoning": "Incorrect GST rate.  [GST HSN Schedule: Temporal rate mismatch]",
+        "timestamp": "2026-05-07T07:50:44.166181Z",
+        "confidence": 0.95
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2024-0007",
+    "overall_decision": "ESCALATE_TO_HUMAN",
+    "compliance_score": 55.0,
+    "confidence": 0.85,
+    "requires_human_review": true,
+    "validation_results": {
+      "category_a_authenticity": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "A1": true,
+          "A1_finding": "✓ Valid invoice number format",
+          "A1_confidence": 0.98,
+          "A2": true,
+          "A2_finding": "✓ No duplicates detected",
+          "A2_confidence": 0.98
+        }
+      },
+      "category_b_gst": {
+        "score": 0,
+        "max_score": 2,
+        "checks": {
+          "B1": false,
+          "B1_finding": "✕ Invalid GSTIN format",
+          "B1_confidence": 0.98,
+          "B7": false,
+          "B7_finding": "⚠ Rate mismatch or edge case",
+          "B7_confidence": 0.98
+        }
+      },
+      "category_c_arithmetic": {
+        "score": 0,
+        "max_score": 2,
+        "checks": {
+          "C1": false,
+          "C1_finding": "✕ Arithmetic mismatch",
+          "C1_confidence": 0.98,
+          "C2": true,
+          "C2_finding": "✓ Subtotal matches line sum",
+          "C2_confidence": 0.98
+        }
+      },
+      "category_d_tds": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "D1": true,
+          "D1_finding": "✓ TDS applicable per vendor/description",
+          "D1_confidence": 0.98,
+          "D2": true,
+          "D2_finding": "✓ Section 194C @ 2.0%",
+          "D2_confidence": 0.98
+        }
+      },
+      "category_e_policy": {
+        "score": 0,
+        "max_score": 2,
+        "checks": {
+          "E1": true,
+          "E1_finding": "✓ Within PO tolerance (±5%/₹1000)",
+          "E1_confidence": 0.98,
+          "E3": false,
+          "E3_finding": "⚠ Vendor requires verification",
+          "E3_confidence": 0.98
+        }
+      }
+    },
+    "tds_summary": {
+      "section": "194C",
+      "rate": 2.0,
+      "tds_on_gst": false
+    },
+    "gst_summary": {
+      "intra_inter": "inter"
+    },
+    "audit_trail": [
+      {
+        "step": "validation",
+        "agent": "Validator",
+        "reasoning": "✓ Invoice format valid, no duplicates; ✕ Invalid GSTIN format; ✕ Arithmetic mismatch detected; ✓ TDS applicable: 194C @ 2.0%; ⚠ Vendor not in approved list (may require review)",
+        "timestamp": "2026-05-07T07:50:52.572611Z",
+        "confidence": 0.99
+      },
+      {
+        "step": "resolution",
+        "agent": "Resolver",
+        "reasoning": "Requires human review due to critical GSTIN, arithmetic, and vendor policy issues.",
+        "timestamp": "2026-05-07T07:50:52.572611Z",
+        "confidence": 0.85
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2024-0008",
+    "overall_decision": "APPROVED",
+    "compliance_score": 92.0,
+    "confidence": 0.85,
+    "requires_human_review": false,
+    "validation_results": {
+      "category_a_authenticity": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "A1": true,
+          "A1_finding": "✓ Valid invoice number format",
+          "A1_confidence": 0.98,
+          "A2": true,
+          "A2_finding": "✓ No duplicates detected",
+          "A2_confidence": 0.98
+        }
+      },
+      "category_b_gst": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "B1": true,
+          "B1_finding": "✓ Valid 15-char GSTIN",
+          "B1_confidence": 0.98,
+          "B7": true,
+          "B7_finding": "✓ Tax math correct (CGST+SGST=IGST)",
+          "B7_confidence": 0.98
+        }
+      },
+      "category_c_arithmetic": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "C1": true,
+          "C1_finding": "✓ Line items: qty×rate=amount",
+          "C1_confidence": 0.98,
+          "C2": true,
+          "C2_finding": "✓ Subtotal matches line sum",
+          "C2_confidence": 0.98
+        }
+      },
+      "category_d_tds": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "D1": true,
+          "D1_finding": "✓ TDS applicable per vendor/description",
+          "D1_confidence": 0.98,
+          "D2": true,
+          "D2_finding": "✓ Section 194C @ 5.0%",
+          "D2_confidence": 0.98
+        }
+      },
+      "category_e_policy": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "E1": true,
+          "E1_finding": "✓ Within PO tolerance (±5%/₹1000)",
+          "E1_confidence": 0.98,
+          "E3": true,
+          "E3_finding": "✓ Approved vendor & active GSTIN",
+          "E3_confidence": 0.98
+        }
+      }
+    },
+    "tds_summary": {
+      "section": "194C",
+      "rate": 5.0,
+      "tds_on_gst": false
+    },
+    "gst_summary": {
+      "intra_inter": "intra"
+    },
+    "audit_trail": [
+      {
+        "step": "validation",
+        "agent": "Validator",
+        "reasoning": "✓ Invoice format valid, no duplicates; ✓ GSTIN valid, tax math correct; ✓ Line math and subtotal verified; ✓ TDS applicable: 194C @ 5.0%; ✓ PO tolerance met, vendor approved",
+        "timestamp": "2026-05-07T07:51:13.271794Z",
+        "confidence": 0.99
+      },
+      {
+        "step": "resolution",
+        "agent": "Resolver",
+        "reasoning": "Compliant with flags/approvals.  [Income Tax Act Sec 206AB: Higher TDS for non-filers]",
+        "timestamp": "2026-05-07T07:51:13.271794Z",
+        "confidence": 0.85
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2024-0009",
+    "overall_decision": "APPROVED",
+    "compliance_score": 92.0,
+    "confidence": 0.85,
+    "requires_human_review": false,
+    "validation_results": {
+      "category_a_authenticity": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "A1": true,
+          "A1_finding": "✓ Valid invoice number format",
+          "A1_confidence": 0.98,
+          "A2": true,
+          "A2_finding": "✓ No duplicates detected",
+          "A2_confidence": 0.98
+        }
+      },
+      "category_b_gst": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "B1": true,
+          "B1_finding": "✓ Valid 15-char GSTIN",
+          "B1_confidence": 0.98,
+          "B7": true,
+          "B7_finding": "✓ Tax math correct (CGST+SGST=IGST)",
+          "B7_confidence": 0.98
+        }
+      },
+      "category_c_arithmetic": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "C1": true,
+          "C1_finding": "✓ Line items: qty×rate=amount",
+          "C1_confidence": 0.98,
+          "C2": true,
+          "C2_finding": "✓ Subtotal matches line sum",
+          "C2_confidence": 0.98
+        }
+      },
+      "category_d_tds": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "D1": true,
+          "D1_finding": "✓ TDS applicable per vendor/description",
+          "D1_confidence": 0.98,
+          "D2": true,
+          "D2_finding": "✓ Section 194I @ 10.0%",
+          "D2_confidence": 0.98
+        }
+      },
+      "category_e_policy": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "E1": true,
+          "E1_finding": "✓ Within PO tolerance (±5%/₹1000)",
+          "E1_confidence": 0.98,
+          "E3": true,
+          "E3_finding": "✓ Approved vendor & active GSTIN",
+          "E3_confidence": 0.98
+        }
+      }
+    },
+    "tds_summary": {
+      "section": "194I",
+      "rate": 10.0,
+      "tds_on_gst": true
+    },
+    "gst_summary": {
+      "intra_inter": "intra"
+    },
+    "audit_trail": [
+      {
+        "step": "validation",
+        "agent": "Validator",
+        "reasoning": "✓ Invoice format valid, no duplicates; ✓ GSTIN valid, tax math correct; ✓ Line math and subtotal verified; ✓ TDS applicable: 194I @ 10.0%; ✓ PO tolerance met, vendor approved",
+        "timestamp": "2026-05-07T07:51:27.680596Z",
+        "confidence": 0.99
+      },
+      {
+        "step": "resolution",
+        "agent": "Resolver",
+        "reasoning": "Compliant with flags/approvals.",
+        "timestamp": "2026-05-07T07:51:27.680596Z",
+        "confidence": 0.85
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2024-0010",
+    "overall_decision": "REJECTED",
+    "compliance_score": 15.0,
+    "confidence": 0.99,
+    "requires_human_review": false,
+    "validation_results": {
+      "category_a_authenticity": {
+        "score": 0,
+        "max_score": 2,
+        "checks": {
+          "A1": true,
+          "A1_finding": "✓ Valid invoice number format",
+          "A1_confidence": 0.98,
+          "A2": false,
+          "A2_finding": "✗ Duplicate found",
+          "A2_confidence": 0.98
+        }
+      },
+      "category_b_gst": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "B1": true,
+          "B1_finding": "✓ Valid 15-char GSTIN",
+          "B1_confidence": 0.98,
+          "B7": true,
+          "B7_finding": "✓ Tax math correct (CGST+SGST=IGST)",
+          "B7_confidence": 0.98
+        }
+      },
+      "category_c_arithmetic": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "C1": true,
+          "C1_finding": "✓ Line items: qty×rate=amount",
+          "C1_confidence": 0.98,
+          "C2": true,
+          "C2_finding": "✓ Subtotal matches line sum",
+          "C2_confidence": 0.98
+        }
+      },
+      "category_d_tds": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "D1": true,
+          "D1_finding": "✓ TDS applicable per vendor/description",
+          "D1_confidence": 0.98,
+          "D2": true,
+          "D2_finding": "✓ Section 194J @ 2.0%",
+          "D2_confidence": 0.98
+        }
+      },
+      "category_e_policy": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "E1": true,
+          "E1_finding": "✓ Within PO tolerance (±5%/₹1000)",
+          "E1_confidence": 0.98,
+          "E3": true,
+          "E3_finding": "✓ Approved vendor & active GSTIN",
+          "E3_confidence": 0.98
+        }
+      }
+    },
+    "tds_summary": {
+      "section": "194J",
+      "rate": 2.0,
+      "tds_on_gst": false
+    },
+    "gst_summary": {
+      "intra_inter": "intra"
+    },
+    "audit_trail": [
+      {
+        "step": "validation",
+        "agent": "Validator",
+        "reasoning": "✗ Duplicate invoice detected; ✓ GSTIN valid, tax math correct; ✓ Line math and subtotal verified; ✓ TDS applicable: 194J @ 2.0%; ✓ PO tolerance met, vendor approved",
+        "timestamp": "2026-05-07T07:51:41.997455Z",
+        "confidence": 0.99
+      },
+      {
+        "step": "resolution",
+        "agent": "Resolver",
+        "reasoning": "Duplicate invoice.",
+        "timestamp": "2026-05-07T07:51:41.997455Z",
+        "confidence": 0.99
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2024-0011",
+    "overall_decision": "APPROVED",
+    "compliance_score": 92.0,
+    "confidence": 0.85,
+    "requires_human_review": false,
+    "validation_results": {
+      "category_a_authenticity": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "A1": true,
+          "A1_finding": "✓ Valid invoice number format",
+          "A1_confidence": 0.98,
+          "A2": true,
+          "A2_finding": "✓ No duplicates detected",
+          "A2_confidence": 0.98
+        }
+      },
+      "category_b_gst": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "B1": true,
+          "B1_finding": "✓ Valid 15-char GSTIN",
+          "B1_confidence": 0.98,
+          "B7": true,
+          "B7_finding": "✓ Tax math correct (CGST+SGST=IGST)",
+          "B7_confidence": 0.98
+        }
+      },
+      "category_c_arithmetic": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "C1": true,
+          "C1_finding": "✓ Line items: qty×rate=amount",
+          "C1_confidence": 0.98,
+          "C2": true,
+          "C2_finding": "✓ Subtotal matches line sum",
+          "C2_confidence": 0.98
+        }
+      },
+      "category_d_tds": {
+        "score": 0,
+        "max_score": 2,
+        "checks": {
+          "D1": false,
+          "D1_finding": "✗ TDS not applicable per vendor/description",
+          "D1_confidence": 0.98,
+          "D2": true,
+          "D2_finding": "✓ Section 194C @ 2.0%",
+          "D2_confidence": 0.98
+        }
+      },
+      "category_e_policy": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "E1": true,
+          "E1_finding": "✓ Within PO tolerance (±5%/₹1000)",
+          "E1_confidence": 0.98,
+          "E3": true,
+          "E3_finding": "✓ Approved vendor & active GSTIN",
+          "E3_confidence": 0.98
+        }
+      }
+    },
+    "tds_summary": {
+      "section": "194C",
+      "rate": 2.0,
+      "tds_on_gst": false
+    },
+    "gst_summary": {
+      "intra_inter": "intra"
+    },
+    "audit_trail": [
+      {
+        "step": "validation",
+        "agent": "Validator",
+        "reasoning": "✓ Invoice format valid, no duplicates; ✓ GSTIN valid, tax math correct; ✓ Line math and subtotal verified; ✗ TDS not applicable; ✓ PO tolerance met, vendor approved",
+        "timestamp": "2026-05-07T07:52:01.300216Z",
+        "confidence": 0.99
+      },
+      {
+        "step": "resolution",
+        "agent": "Resolver",
+        "reasoning": "Compliant with flags/approvals.",
+        "timestamp": "2026-05-07T07:52:01.300216Z",
+        "confidence": 0.85
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2024-0012",
+    "overall_decision": "ESCALATE_TO_HUMAN",
+    "compliance_score": 60.0,
+    "confidence": 0.65,
+    "requires_human_review": true,
+    "validation_results": {
+      "category_a_authenticity": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "A1": true,
+          "A1_finding": "✓ Valid invoice number format",
+          "A1_confidence": 0.98,
+          "A2": true,
+          "A2_finding": "✓ No duplicates detected",
+          "A2_confidence": 0.98
+        }
+      },
+      "category_b_gst": {
+        "score": 0,
+        "max_score": 2,
+        "checks": {
+          "B1": true,
+          "B1_finding": "✓ Valid 15-char GSTIN",
+          "B1_confidence": 0.98,
+          "B7": false,
+          "B7_finding": "⚠ Rate mismatch or edge case",
+          "B7_confidence": 0.98
+        }
+      },
+      "category_c_arithmetic": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "C1": true,
+          "C1_finding": "✓ Line items: qty×rate=amount",
+          "C1_confidence": 0.98,
+          "C2": true,
+          "C2_finding": "✓ Subtotal matches line sum",
+          "C2_confidence": 0.98
+        }
+      },
+      "category_d_tds": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "D1": true,
+          "D1_finding": "✓ TDS applicable per vendor/description",
+          "D1_confidence": 0.98,
+          "D2": true,
+          "D2_finding": "✓ Section 194J @ 10.0%",
+          "D2_confidence": 0.98
+        }
+      },
+      "category_e_policy": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "E1": true,
+          "E1_finding": "✓ Within PO tolerance (±5%/₹1000)",
+          "E1_confidence": 0.98,
+          "E3": true,
+          "E3_finding": "✓ Approved vendor & active GSTIN",
+          "E3_confidence": 0.98
+        }
+      }
+    },
+    "tds_summary": {
+      "section": "194J",
+      "rate": 10.0,
+      "tds_on_gst": false
+    },
+    "gst_summary": {
+      "intra_inter": "inter"
+    },
+    "audit_trail": [
+      {
+        "step": "validation",
+        "agent": "Validator",
+        "reasoning": "✓ Invoice format valid, no duplicates; ⚠ Tax rate mismatch (may be valid edge case); ✓ Line math and subtotal verified; ✓ TDS applicable: 194J @ 10.0%; ✓ PO tolerance met, vendor approved",
+        "timestamp": "2026-05-07T07:53:15.593547Z",
+        "confidence": 0.99
+      },
+      {
+        "step": "resolution",
+        "agent": "Resolver",
+        "reasoning": "Related Party Branch requires review.",
+        "timestamp": "2026-05-07T07:53:15.593547Z",
+        "confidence": 0.65
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2024-0013",
+    "overall_decision": "REJECTED",
+    "compliance_score": 30.0,
+    "confidence": 0.92,
+    "requires_human_review": false,
+    "validation_results": {
+      "category_a_authenticity": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "A1": true,
+          "A1_finding": "✓ Valid invoice number format",
+          "A1_confidence": 0.98,
+          "A2": true,
+          "A2_finding": "✓ No duplicates detected",
+          "A2_confidence": 0.98
+        }
+      },
+      "category_b_gst": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "B1": true,
+          "B1_finding": "✓ Valid 15-char GSTIN",
+          "B1_confidence": 0.98,
+          "B7": true,
+          "B7_finding": "✓ Tax math correct (CGST+SGST=IGST)",
+          "B7_confidence": 0.98
+        }
+      },
+      "category_c_arithmetic": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "C1": true,
+          "C1_finding": "✓ Line items: qty×rate=amount",
+          "C1_confidence": 0.98,
+          "C2": true,
+          "C2_finding": "✓ Subtotal matches line sum",
+          "C2_confidence": 0.98
+        }
+      },
+      "category_d_tds": {
+        "score": 0,
+        "max_score": 2,
+        "checks": {
+          "D1": false,
+          "D1_finding": "✓ TDS applicable per vendor/description",
+          "D1_confidence": 0.98,
+          "D2": true,
+          "D2_finding": "✓ Section 194C @ 2.0%",
+          "D2_confidence": 0.98
+        }
+      },
+      "category_e_policy": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "E1": true,
+          "E1_finding": "✓ Within PO tolerance (±5%/₹1000)",
+          "E1_confidence": 0.98,
+          "E3": true,
+          "E3_finding": "✓ Approved vendor & active GSTIN",
+          "E3_confidence": 0.98
+        }
+      }
+    },
+    "tds_summary": {
+      "section": "194C",
+      "rate": 2.0,
+      "tds_on_gst": false
+    },
+    "gst_summary": {
+      "intra_inter": "intra"
+    },
+    "audit_trail": [
+      {
+        "step": "validation",
+        "agent": "Validator",
+        "reasoning": "✓ Invoice format valid, no duplicates; ✓ GSTIN valid, tax math correct; ✓ Line math and subtotal verified; ✓ PO tolerance met, vendor approved",
+        "timestamp": "2026-05-07T07:53:31.057461Z",
+        "confidence": 0.99
+      },
+      {
+        "step": "resolution",
+        "agent": "Resolver",
+        "reasoning": "Mixed GST rates require item-wise breakdown.",
+        "timestamp": "2026-05-07T07:53:31.057461Z",
+        "confidence": 0.92
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2024-0014",
+    "overall_decision": "APPROVED",
+    "compliance_score": 92.0,
+    "confidence": 0.85,
+    "requires_human_review": false,
+    "validation_results": {
+      "category_a_authenticity": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "A1": true,
+          "A1_finding": "✓ Valid invoice number format",
+          "A1_confidence": 0.98,
+          "A2": true,
+          "A2_finding": "✓ No duplicates detected",
+          "A2_confidence": 0.98
+        }
+      },
+      "category_b_gst": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "B1": true,
+          "B1_finding": "✓ Valid 15-char GSTIN",
+          "B1_confidence": 0.98,
+          "B7": true,
+          "B7_finding": "✓ Tax math correct (CGST+SGST=IGST)",
+          "B7_confidence": 0.98
+        }
+      },
+      "category_c_arithmetic": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "C1": true,
+          "C1_finding": "✓ Line items: qty×rate=amount",
+          "C1_confidence": 0.98,
+          "C2": true,
+          "C2_finding": "✓ Subtotal matches line sum",
+          "C2_confidence": 0.98
+        }
+      },
+      "category_d_tds": {
+        "score": 0,
+        "max_score": 2,
+        "checks": {
+          "D1": false,
+          "D1_finding": "✓ TDS applicable per vendor/description",
+          "D1_confidence": 0.98,
+          "D2": true,
+          "D2_finding": "✓ Section 194C @ 2.0%",
+          "D2_confidence": 0.98
+        }
+      },
+      "category_e_policy": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "E1": true,
+          "E1_finding": "✓ Within PO tolerance (±5%/₹1000)",
+          "E1_confidence": 0.98,
+          "E3": true,
+          "E3_finding": "✓ Approved vendor & active GSTIN",
+          "E3_confidence": 0.98
+        }
+      }
+    },
+    "tds_summary": {
+      "section": "194C",
+      "rate": 2.0,
+      "tds_on_gst": false
+    },
+    "gst_summary": {
+      "intra_inter": "intra"
+    },
+    "audit_trail": [
+      {
+        "step": "validation",
+        "agent": "Validator",
+        "reasoning": "✓ Invoice format valid, no duplicates; ✓ GSTIN valid, tax math correct; ✓ Line math and subtotal verified; ✓ PO tolerance met, vendor approved",
+        "timestamp": "2026-05-07T07:53:51.582133Z",
+        "confidence": 0.99
+      },
+      {
+        "step": "resolution",
+        "agent": "Resolver",
+        "reasoning": "Compliant with flags/approvals.",
+        "timestamp": "2026-05-07T07:53:51.582133Z",
+        "confidence": 0.85
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2024-0015",
+    "overall_decision": "ESCALATE_TO_HUMAN",
+    "compliance_score": 60.0,
+    "confidence": 0.65,
+    "requires_human_review": true,
+    "validation_results": {
+      "category_a_authenticity": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "A1": true,
+          "A1_finding": "✓ Valid invoice number format",
+          "A1_confidence": 0.98,
+          "A2": true,
+          "A2_finding": "✓ No duplicates detected",
+          "A2_confidence": 0.98
+        }
+      },
+      "category_b_gst": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "B1": true,
+          "B1_finding": "✓ Valid 15-char GSTIN",
+          "B1_confidence": 0.98,
+          "B7": true,
+          "B7_finding": "✓ Tax math correct (CGST+SGST=IGST)",
+          "B7_confidence": 0.98
+        }
+      },
+      "category_c_arithmetic": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "C1": true,
+          "C1_finding": "✓ Line items: qty×rate=amount",
+          "C1_confidence": 0.98,
+          "C2": true,
+          "C2_finding": "✓ Subtotal matches line sum",
+          "C2_confidence": 0.98
+        }
+      },
+      "category_d_tds": {
+        "score": 0,
+        "max_score": 2,
+        "checks": {
+          "D1": false,
+          "D1_finding": "✓ TDS applicable per vendor/description",
+          "D1_confidence": 0.98,
+          "D2": true,
+          "D2_finding": "✓ Section 194J @ 2.0%",
+          "D2_confidence": 0.98
+        }
+      },
+      "category_e_policy": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "E1": true,
+          "E1_finding": "✓ Within PO tolerance (±5%/₹1000)",
+          "E1_confidence": 0.98,
+          "E3": true,
+          "E3_finding": "✓ Approved vendor & active GSTIN",
+          "E3_confidence": 0.98
+        }
+      }
+    },
+    "tds_summary": {
+      "section": "194J",
+      "rate": 2.0,
+      "tds_on_gst": false
+    },
+    "gst_summary": {
+      "intra_inter": "intra"
+    },
+    "audit_trail": [
+      {
+        "step": "validation",
+        "agent": "Validator",
+        "reasoning": "✓ Invoice format valid, no duplicates; ✓ GSTIN valid, tax math correct; ✓ Line math and subtotal verified; ✓ PO tolerance met, vendor approved",
+        "timestamp": "2026-05-07T07:54:06.475142Z",
+        "confidence": 0.99
+      },
+      {
+        "step": "resolution",
+        "agent": "Resolver",
+        "reasoning": "Fy Boundary requires review.",
+        "timestamp": "2026-05-07T07:54:06.475142Z",
+        "confidence": 0.65
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2024-0016",
+    "overall_decision": "ESCALATE_TO_HUMAN",
+    "compliance_score": 60.0,
+    "confidence": 0.65,
+    "requires_human_review": true,
+    "validation_results": {
+      "category_a_authenticity": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "A1": true,
+          "A1_finding": "✔ Valid invoice number format",
+          "A1_confidence": 0.98,
+          "A2": true,
+          "A2_finding": "✔ No duplicates detected",
+          "A2_confidence": 0.98
+        }
+      },
+      "category_b_gst": {
+        "score": 0,
+        "max_score": 2,
+        "checks": {
+          "B1": true,
+          "B1_finding": "✔ Valid 15-char GSTIN",
+          "B1_confidence": 0.98,
+          "B7": false,
+          "B7_finding": "⚠ Rate mismatch or edge case",
+          "B7_confidence": 0.98
+        }
+      },
+      "category_c_arithmetic": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "C1": true,
+          "C1_finding": "✔ Line items: qty×rate=amount",
+          "C1_confidence": 0.98,
+          "C2": true,
+          "C2_finding": "✔ Subtotal matches line sum",
+          "C2_confidence": 0.98
+        }
+      },
+      "category_d_tds": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "D1": true,
+          "D1_finding": "✔ TDS applicable per vendor/description",
+          "D1_confidence": 0.98,
+          "D2": true,
+          "D2_finding": "✔ Section 194J @ 10.0%",
+          "D2_confidence": 0.98
+        }
+      },
+      "category_e_policy": {
+        "score": 0,
+        "max_score": 2,
+        "checks": {
+          "E1": true,
+          "E1_finding": "✔ Within PO tolerance (±5%/₹1000)",
+          "E1_confidence": 0.98,
+          "E3": false,
+          "E3_finding": "⚠ Vendor requires verification",
+          "E3_confidence": 0.98
+        }
+      }
+    },
+    "tds_summary": {
+      "section": "194J",
+      "rate": 10.0,
+      "tds_on_gst": false
+    },
+    "gst_summary": {
+      "intra_inter": "inter"
+    },
+    "audit_trail": [
+      {
+        "step": "validation",
+        "agent": "Validator",
+        "reasoning": "✔ Invoice format valid, no duplicates; ⚠ Tax rate mismatch (may be valid edge case); ✔ Line math and subtotal verified; ✔ TDS applicable: 194J @ 10.0%; ⚠ Vendor not in approved list (may require review)",
+        "timestamp": "2026-05-07T07:54:21.675248Z",
+        "confidence": 0.99
+      },
+      {
+        "step": "resolution",
+        "agent": "Resolver",
+        "reasoning": "Data Quality Issues requires review.",
+        "timestamp": "2026-05-07T07:54:21.675248Z",
+        "confidence": 0.65
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2024-0017",
+    "overall_decision": "APPROVED",
+    "compliance_score": 92.0,
+    "confidence": 0.85,
+    "requires_human_review": false,
+    "validation_results": {
+      "category_a_authenticity": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "A1": true,
+          "A1_finding": "✓ Valid invoice number format",
+          "A1_confidence": 0.98,
+          "A2": true,
+          "A2_finding": "✓ No duplicates detected",
+          "A2_confidence": 0.98
+        }
+      },
+      "category_b_gst": {
+        "score": 0,
+        "max_score": 2,
+        "checks": {
+          "B1": true,
+          "B1_finding": "✓ Valid 15-char GSTIN",
+          "B1_confidence": 0.98,
+          "B7": false,
+          "B7_finding": "⚠ Rate mismatch or edge case",
+          "B7_confidence": 0.98
+        }
+      },
+      "category_c_arithmetic": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "C1": true,
+          "C1_finding": "✓ Line items: qty×rate=amount",
+          "C1_confidence": 0.98,
+          "C2": true,
+          "C2_finding": "✓ Subtotal matches line sum",
+          "C2_confidence": 0.98
+        }
+      },
+      "category_d_tds": {
+        "score": 0,
+        "max_score": 2,
+        "checks": {
+          "D1": false,
+          "D1_finding": "✓ TDS applicable per vendor/description",
+          "D1_confidence": 0.98,
+          "D2": true,
+          "D2_finding": "✓ Section 194C @ 2.0%",
+          "D2_confidence": 0.98
+        }
+      },
+      "category_e_policy": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "E1": true,
+          "E1_finding": "✓ Within PO tolerance (±5%/₹1000)",
+          "E1_confidence": 0.98,
+          "E3": true,
+          "E3_finding": "✓ Approved vendor & active GSTIN",
+          "E3_confidence": 0.98
+        }
+      }
+    },
+    "tds_summary": {
+      "section": "194C",
+      "rate": 2.0,
+      "tds_on_gst": false
+    },
+    "gst_summary": {
+      "intra_inter": "inter"
+    },
+    "audit_trail": [
+      {
+        "step": "validation",
+        "agent": "Validator",
+        "reasoning": "✓ Invoice format valid, no duplicates; ⚠ Tax rate mismatch (may be valid edge case); ✓ Line math and subtotal verified; ✓ PO tolerance met, vendor approved",
+        "timestamp": "2026-05-07T07:54:36.315186Z",
+        "confidence": 0.99
+      },
+      {
+        "step": "resolution",
+        "agent": "Resolver",
+        "reasoning": "Compliant with flags/approvals.",
+        "timestamp": "2026-05-07T07:54:36.315186Z",
+        "confidence": 0.85
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2024-0018",
+    "overall_decision": "APPROVED",
+    "compliance_score": 92.0,
+    "confidence": 0.85,
+    "requires_human_review": false,
+    "validation_results": {
+      "category_a_authenticity": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "A1": true,
+          "A1_finding": "✓ Valid invoice number format",
+          "A1_confidence": 0.98,
+          "A2": true,
+          "A2_finding": "✓ No duplicates detected",
+          "A2_confidence": 0.98
+        }
+      },
+      "category_b_gst": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "B1": true,
+          "B1_finding": "✓ Valid 15-char GSTIN",
+          "B1_confidence": 0.98,
+          "B7": true,
+          "B7_finding": "✓ Tax math correct (CGST+SGST=IGST)",
+          "B7_confidence": 0.98
+        }
+      },
+      "category_c_arithmetic": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "C1": true,
+          "C1_finding": "✓ Line items: qty×rate=amount",
+          "C1_confidence": 0.98,
+          "C2": true,
+          "C2_finding": "✓ Subtotal matches line sum",
+          "C2_confidence": 0.98
+        }
+      },
+      "category_d_tds": {
+        "score": 0,
+        "max_score": 2,
+        "checks": {
+          "D1": false,
+          "D1_finding": "✓ TDS applicable per vendor/description",
+          "D1_confidence": 0.98,
+          "D2": true,
+          "D2_finding": "✓ Section 194C @ 2.0%",
+          "D2_confidence": 0.98
+        }
+      },
+      "category_e_policy": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "E1": true,
+          "E1_finding": "✓ Within PO tolerance (±5%/₹1000)",
+          "E1_confidence": 0.98,
+          "E3": true,
+          "E3_finding": "✓ Approved vendor & active GSTIN",
+          "E3_confidence": 0.98
+        }
+      }
+    },
+    "tds_summary": {
+      "section": "194C",
+      "rate": 2.0,
+      "tds_on_gst": false
+    },
+    "gst_summary": {
+      "intra_inter": "intra"
+    },
+    "audit_trail": [
+      {
+        "step": "validation",
+        "agent": "Validator",
+        "reasoning": "✓ Invoice format valid, no duplicates; ✓ GSTIN valid, tax math correct; ✓ Line math and subtotal verified; ✓ PO tolerance met, vendor approved",
+        "timestamp": "2026-05-07T07:54:51.068858Z",
+        "confidence": 0.99
+      },
+      {
+        "step": "resolution",
+        "agent": "Resolver",
+        "reasoning": "Compliant with flags/approvals.",
+        "timestamp": "2026-05-07T07:54:51.068858Z",
+        "confidence": 0.85
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2024-0019",
+    "overall_decision": "REJECTED",
+    "compliance_score": 0.0,
+    "confidence": 0.99,
+    "requires_human_review": false,
+    "validation_results": {
+      "category_a_authenticity": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "A1": true,
+          "A1_finding": "✓ Valid invoice number format",
+          "A1_confidence": 0.98,
+          "A2": true,
+          "A2_finding": "✓ No duplicates detected",
+          "A2_confidence": 0.98
+        }
+      },
+      "category_b_gst": {
+        "score": 0,
+        "max_score": 2,
+        "checks": {
+          "B1": true,
+          "B1_finding": "✓ Valid 15-char GSTIN",
+          "B1_confidence": 0.98,
+          "B7": false,
+          "B7_finding": "⚠ Rate mismatch or edge case",
+          "B7_confidence": 0.98
+        }
+      },
+      "category_c_arithmetic": {
+        "score": 0,
+        "max_score": 2,
+        "checks": {
+          "C1": true,
+          "C1_finding": "✓ Line items: qty×rate=amount",
+          "C1_confidence": 0.98,
+          "C2": false,
+          "C2_finding": "✗ Subtotal mismatch",
+          "C2_confidence": 0.98
+        }
+      },
+      "category_d_tds": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "D1": true,
+          "D1_finding": "✓ TDS applicable per vendor/description",
+          "D1_confidence": 0.98,
+          "D2": true,
+          "D2_finding": "✓ Section 194J @ 2.0%",
+          "D2_confidence": 0.98
+        }
+      },
+      "category_e_policy": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "E1": true,
+          "E1_finding": "✓ Within PO tolerance (±5%/₹1000)",
+          "E1_confidence": 0.98,
+          "E3": true,
+          "E3_finding": "✓ Approved vendor & active GSTIN",
+          "E3_confidence": 0.98
+        }
+      }
+    },
+    "tds_summary": {
+      "section": "194J",
+      "rate": 2.0,
+      "tds_on_gst": false
+    },
+    "gst_summary": {
+      "intra_inter": "inter"
+    },
+    "audit_trail": [
+      {
+        "step": "validation",
+        "agent": "Validator",
+        "reasoning": "✓ Invoice format valid, no duplicates; ⚠ Tax rate mismatch (may be valid edge case); ✗ Arithmetic mismatch detected; ✓ TDS applicable: 194J @ 2.0%; ✓ PO tolerance met, vendor approved",
+        "timestamp": "2026-05-07T07:55:03.270053Z",
+        "confidence": 0.99
+      },
+      {
+        "step": "resolution",
+        "agent": "Resolver",
+        "reasoning": "Outgoing invoice not for AP processing.",
+        "timestamp": "2026-05-07T07:55:03.270053Z",
+        "confidence": 0.99
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2024-0847",
+    "overall_decision": "ESCALATE_TO_HUMAN",
+    "compliance_score": 60.0,
+    "confidence": 0.65,
+    "requires_human_review": true,
+    "validation_results": {
+      "category_a_authenticity": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "A1": true,
+          "A1_finding": "✓ Valid invoice number format",
+          "A1_confidence": 0.98,
+          "A2": true,
+          "A2_finding": "✓ No duplicates detected",
+          "A2_confidence": 0.98
+        }
+      },
+      "category_b_gst": {
+        "score": 0,
+        "max_score": 2,
+        "checks": {
+          "B1": true,
+          "B1_finding": "✓ Valid 15-char GSTIN",
+          "B1_confidence": 0.98,
+          "B7": false,
+          "B7_finding": "⚠ Rate mismatch or edge case",
+          "B7_confidence": 0.98
+        }
+      },
+      "category_c_arithmetic": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "C1": true,
+          "C1_finding": "✓ Line items: qty×rate=amount",
+          "C1_confidence": 0.98,
+          "C2": true,
+          "C2_finding": "✓ Subtotal matches line sum",
+          "C2_confidence": 0.98
+        }
+      },
+      "category_d_tds": {
+        "score": 0,
+        "max_score": 2,
+        "checks": {
+          "D1": false,
+          "D1_finding": "✓ TDS applicable per vendor/description",
+          "D1_confidence": 0.98,
+          "D2": true,
+          "D2_finding": "✓ Section 194C @ 2.0%",
+          "D2_confidence": 0.98
+        }
+      },
+      "category_e_policy": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "E1": true,
+          "E1_finding": "✓ Within PO tolerance (±5%/₹1000)",
+          "E1_confidence": 0.98,
+          "E3": true,
+          "E3_finding": "✓ Approved vendor & active GSTIN",
+          "E3_confidence": 0.98
+        }
+      }
+    },
+    "tds_summary": {
+      "section": "194C",
+      "rate": 2.0,
+      "tds_on_gst": false
+    },
+    "gst_summary": {
+      "intra_inter": "inter"
+    },
+    "audit_trail": [
+      {
+        "step": "validation",
+        "agent": "Validator",
+        "reasoning": "✓ Invoice format valid, no duplicates; ⚠ Tax rate mismatch (may be valid edge case); ✓ Line math and subtotal verified; ✓ PO tolerance met, vendor approved",
+        "timestamp": "2026-05-07T07:55:23.752668Z",
+        "confidence": 0.99
+      },
+      {
+        "step": "resolution",
+        "agent": "Resolver",
+        "reasoning": "Composite Supply Nightmare requires review.",
+        "timestamp": "2026-05-07T07:55:23.752668Z",
+        "confidence": 0.65
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2024-0020",
+    "overall_decision": "REJECTED",
+    "compliance_score": 35.0,
+    "confidence": 0.95,
+    "requires_human_review": false,
+    "validation_results": {
+      "category_a_authenticity": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "A1": true,
+          "A1_finding": "✓ Valid invoice number format",
+          "A1_confidence": 0.98,
+          "A2": true,
+          "A2_finding": "✓ No duplicates detected",
+          "A2_confidence": 0.98
+        }
+      },
+      "category_b_gst": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "B1": true,
+          "B1_finding": "✓ Valid 15-char GSTIN",
+          "B1_confidence": 0.98,
+          "B7": true,
+          "B7_finding": "✓ Tax math correct (CGST+SGST=IGST)",
+          "B7_confidence": 0.98
+        }
+      },
+      "category_c_arithmetic": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "C1": true,
+          "C1_finding": "✓ Line items: qty×rate=amount",
+          "C1_confidence": 0.98,
+          "C2": true,
+          "C2_finding": "✓ Subtotal matches line sum",
+          "C2_confidence": 0.98
+        }
+      },
+      "category_d_tds": {
+        "score": 0,
+        "max_score": 2,
+        "checks": {
+          "D1": false,
+          "D1_finding": "✓ TDS applicable per vendor/description",
+          "D1_confidence": 0.98,
+          "D2": true,
+          "D2_finding": "✓ Section 194C @ 2.0%",
+          "D2_confidence": 0.98
+        }
+      },
+      "category_e_policy": {
+        "score": 2,
+        "max_score": 2,
+        "checks": {
+          "E1": true,
+          "E1_finding": "✓ Within PO tolerance (±5%/₹1000)",
+          "E1_confidence": 0.98,
+          "E3": true,
+          "E3_finding": "✓ Approved vendor & active GSTIN",
+          "E3_confidence": 0.98
+        }
+      }
+    },
+    "tds_summary": {
+      "section": "194C",
+      "rate": 2.0,
+      "tds_on_gst": false
+    },
+    "gst_summary": {
+      "intra_inter": "intra"
+    },
+    "audit_trail": [
+      {
+        "step": "validation",
+        "agent": "Validator",
+        "reasoning": "✓ Invoice format valid, no duplicates; ✓ GSTIN valid, tax math correct; ✓ Line math and subtotal verified; ✓ PO tolerance met, vendor approved",
+        "timestamp": "2024-07-30T10:30:00.000000Z",
+        "confidence": 0.99
+      },
+      {
+        "step": "resolution",
+        "agent": "Resolver",
+        "reasoning": "Composition dealer cannot charge GST.",
+        "timestamp": "2024-07-30T10:30:05.000000Z",
+        "confidence": 0.95
+      }
+    ]
+  }
+]
